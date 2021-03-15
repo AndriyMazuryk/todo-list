@@ -22,9 +22,9 @@ const ALL = "all";
 const ACTIVE = "active";
 const COMPLETED = "completed";
 
-const TODO_LIST_LOCAL_STORAGE = "todo-list-data";
-const TODO_CATEGORY_LOCAL_STORAGE = "todo-category-data";
-const TODO_THEME_LOCAL_STORAGE = "todo-theme-data";
+const LOCAL_STORAGE_TODO_LIST = "todo-list-data";
+const LOCAL_STORAGE_CATEGORY = "todo-category-data";
+const LOCAL_STORAGE_THEME = "todo-theme-data";
 
 const DARK = "dark";
 const LIGHT = "light";
@@ -135,7 +135,7 @@ function addDummyData() {
 function init() {
   if (todoList.length == 0) {
     const localStorageTodoList = JSON.parse(
-      localStorage.getItem(TODO_LIST_LOCAL_STORAGE)
+      localStorage.getItem(LOCAL_STORAGE_TODO_LIST)
     );
     if (
       localStorageTodoList &&
@@ -148,13 +148,13 @@ function init() {
     }
   }
   const localStorageCategory = JSON.parse(
-    localStorage.getItem(TODO_CATEGORY_LOCAL_STORAGE)
+    localStorage.getItem(LOCAL_STORAGE_CATEGORY)
   );
   if (localStorageCategory) {
     currentCategory = localStorageCategory;
   }
   const localStorageTheme = JSON.parse(
-    localStorage.getItem(TODO_THEME_LOCAL_STORAGE)
+    localStorage.getItem(LOCAL_STORAGE_THEME)
   );
   if (
     VALID_THEMES.includes(localStorageTheme) &&
@@ -214,11 +214,8 @@ function renderTodoListElement() {
   } left`;
   footerTextElement.innerHTML = `${todoList.incompletedItemsCount} ${footerText}`;
 
-  localStorage.setItem(TODO_LIST_LOCAL_STORAGE, JSON.stringify(todoList.all));
-  localStorage.setItem(
-    TODO_CATEGORY_LOCAL_STORAGE,
-    JSON.stringify(currentCategory)
-  );
+  localStorage.setItem(LOCAL_STORAGE_TODO_LIST, JSON.stringify(todoList.all));
+  localStorage.setItem(LOCAL_STORAGE_CATEGORY, JSON.stringify(currentCategory));
 }
 
 function onDeleteButtonClick(e) {
@@ -260,5 +257,5 @@ function switchTheme() {
     currentTheme = LIGHT;
   }
 
-  localStorage.setItem(TODO_THEME_LOCAL_STORAGE, JSON.stringify(currentTheme));
+  localStorage.setItem(LOCAL_STORAGE_THEME, JSON.stringify(currentTheme));
 }
