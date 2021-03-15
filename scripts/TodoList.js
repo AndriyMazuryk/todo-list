@@ -10,11 +10,11 @@ class TodoList {
   }
 
   get active() {
-    return this.list.filter(item => item.isCompleted === false);
+    return this.list.filter((item) => item.isCompleted === false);
   }
 
   get completed() {
-    return this.list.filter(item => item.isCompleted === true);
+    return this.list.filter((item) => item.isCompleted === true);
   }
 
   get length() {
@@ -22,14 +22,14 @@ class TodoList {
   }
 
   get incompletedItemsCount() {
-    return this.list.filter(item => item.isCompleted === false).length;
+    return this.list.filter((item) => item.isCompleted === false).length;
   }
 
   set todos(value) {
     this.list = value;
-    this.list.forEach(todo => {
+    this.list.forEach((todo) => {
       todo.__proto__ = TodoItem.prototype;
-    })
+    });
   }
 
   add(text) {
@@ -42,11 +42,15 @@ class TodoList {
   }
 
   clearCompleted() {
-    this.list = this.list.filter(item => item.isCompleted === false);
+    this.list = this.list.filter((item) => item.isCompleted === false);
   }
 
   createTodo(text) {
-    return new TodoItem(Date.now().toString() + Math.floor(Math.random() * 100), text, false);
+    return new TodoItem(
+      Date.now().toString() + Math.floor(Math.random() * 100),
+      text,
+      false
+    );
   }
 }
 

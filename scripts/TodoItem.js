@@ -1,5 +1,4 @@
 class TodoItem {
-
   constructor(id, text, isCompleted) {
     this.id = id;
     this.text = text;

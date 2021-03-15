@@ -123,13 +123,6 @@ function addDummyData() {
   todoList.add("Complete Todo App on Frontend Mentor");
 
   todoList.all[0].isCompleted = true;
-
-  console.log(
-    "Todo Item:",
-    todoList.all[0].id,
-    todoList.all[0].text,
-    todoList.all[0].isCompleted
-  );
 }
 
 function init() {
