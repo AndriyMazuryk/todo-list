@@ -1,0 +1,42 @@
+.add-todo-item {
+  background: var(--todo-item-bg-color);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 2rem 2.3rem;
+  margin-top: 4.2rem;
+  margin-bottom: 2.5rem;
+  border-radius: 0.5rem;
+}
+.add-todo-item__form {
+  width: 100%;
+}
+.add-todo-item__input {
+  width: 100%;
+  background: var(--todo-item-bg-color);
+  color: var(--text-color);
+  font-family: var(--main-font);
+  font-size: 1.8rem;
+  border: none;
+  caret-color: var(--bright-blue);
+}
+.add-todo-item__input:focus {
+  outline: none;
+}
+
+.add-todo-item__submit {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+@media (max-width: 625px) {
+  .add-todo-item {
+    padding: 1.5rem 2.1rem;
+    margin-top: 3.3rem;
+    margin-bottom: 1.5rem;;
+  }
+  .add-todo-item__input {
+    font-size: 1.2rem;
+  }
+}

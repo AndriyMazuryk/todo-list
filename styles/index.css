@@ -1,0 +1,98 @@
+@import "fonts.css";
+
+@import "components/header.css";
+@import "components/add-todo-item.css";
+@import "components/todo-item.css";
+@import "components/footer.css";
+
+:root {
+  --main-font: "Josefin Sans", sans-serif;
+
+  --dark-font-color: hsl(236, 33%, 92%);
+
+  --bg-image: url("../images/bg-desktop-dark.jpg");
+
+  --bg-color: hsl(235, 21%, 11%);
+  --todo-item-bg-color: hsl(235, 24%, 19%);
+  --text-color: hsl(234, 39%, 85%);
+  --text-hover-color: hsl(236, 33%, 92%);
+  --footer-button-color: hsl(234, 11%, 52%);
+  --checkbox-checked-color: hsl(233, 14%, 35%);
+  --checkbox-color: hsl(237, 14%, 26%);
+
+  --bright-blue: hsl(220, 98%, 61%);
+}
+
+.light-theme {
+  --bg-image: url("../images/bg-desktop-light.jpg");
+  /* Very Light Gray */
+  --bg-color: hsl(0, 0%, 98%);
+  --todo-item-bg-color: hsl(0, 0%, 98%);
+  /* Very Light Grayish Blue */
+  --bg-shadow-color: hsl(236, 33%, 92%);
+  /* Light Grayish Blue */
+  --text-hover-color: hsl(233, 11%, 84%);
+  /* Dark Grayish Blue */
+  --checkbox-color: hsl(236, 9%, 61%);
+  --checkbox-checked-color: hsl(236, 9%, 61%);
+  /* Very Dark Grayish Blue */
+  --text-color: hsl(235, 19%, 35%);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 10px;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  background-color: var(--bg-color);
+  background-image: var(--bg-image);
+  background-position: center top;
+  background-repeat: no-repeat;
+  padding-top: 7.5rem;
+  padding-bottom: 7.5rem;
+  width: 100%;
+  min-height: 100%;
+}
+
+.wrapper {
+  margin: 0 auto;
+  width: 54rem;
+}
+
+.shadow-wrapper {
+  --blur: 3rem;
+  --shadow-color: var(--bg-shadow-color);
+  box-shadow: 
+    0.5rem 2rem var(--blur) var(--shadow-color),
+    -0.5rem 2rem var(--blur) var(--shadow-color);
+}
+
+@media (max-width: 376px) {
+  :root {
+    --bg-image: url("../images/bg-mobile-dark.jpg");
+  }
+  .light-theme {
+    --bg-image: url("../images/bg-mobile-light.jpg");
+  }
+}
+@media (max-width: 625px) {
+  .container {
+    padding-top: 4.5rem;
+  }
+  .wrapper {
+    width: 33rem;
+  }
+}

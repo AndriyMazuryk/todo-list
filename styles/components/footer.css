@@ -1,0 +1,79 @@
+.footer {
+  background: var(--todo-item-bg-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  height: 5rem;
+  border-radius: 0 0 0.5rem 0.5rem;
+  position: relative;
+}
+.footer__text {
+  font-family: var(--main-font);
+  font-size: 1.4rem;
+  color: var(--footer-button-color); /*hsl(234, 11%, 52%);*/
+  margin-left: 0.5rem;
+}
+.footer__button {
+  font-family: var(--main-font);
+  font-size: 1.4rem;
+  color: var(--footer-button-color);
+  cursor: pointer;
+  margin-right: 0.5rem;
+}
+.footer__button:hover {
+  color: var(--text-hover-color);
+}
+
+.button-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 4rem;
+}
+.button-box__button {
+  font-family: var(--main-font);
+  font-size: 1.4rem;
+  color: var(--footer-button-color);
+  margin-right: 2rem;
+  cursor: pointer;
+}
+.button-box__button:hover {
+  color: var(--text-hover-color);
+}
+.button-box__button:last-child {
+  margin-right: 0;
+}
+.button-box__button--active {
+  color: var(--bright-blue);
+}
+.button-box__button--active:hover {
+  color: var(--bright-blue);
+}
+
+@media (max-width: 625px) {
+  .footer__text {
+    font-size: 1.2rem;
+    margin-left: 0;
+  }
+  .footer__button {
+    font-size: 1.2rem;
+    margin-right: 0;
+  }
+  .button-box {
+    background: var(--todo-item-bg-color);
+    border-radius: 0.5rem;
+    padding: 1.6rem 0;
+    width: 100%;
+    margin: 0;
+    position: absolute;
+    top: 6.6rem;
+    left: 0;
+
+    --blur: 3rem;
+    --shadow-color: var(--bg-shadow-color);
+    box-shadow:
+      0.5rem 2rem var(--blur) var(--shadow-color),
+      -0.5rem 2rem var(--blur) var(--shadow-color);
+  }
+}

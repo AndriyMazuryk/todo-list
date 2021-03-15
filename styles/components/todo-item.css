@@ -1,0 +1,126 @@
+.todo-item {
+  background: var(--todo-item-bg-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.9rem 2.3rem;
+  border-bottom: 0.1rem solid var(--checkbox-color); /*hsl(233, 14%, 35%);*/
+}
+.todo-item:first-of-type {
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+.todo-item__checkbox {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+.todo-item__checkbox+.todo-item__label {
+  display: inline-flex;
+  align-items: center;
+  user-select: none;
+}
+.todo-item__checkbox+.todo-item__label:hover {
+  cursor: pointer;
+}
+.custom-checkbox__outer {
+  --size: 2.5rem;
+
+  display: inline-block;
+  width: var(--size);
+  height: var(--size);
+  flex-shrink: 0;
+  flex-grow: 0;
+  background: var(--checkbox-color);
+  border-radius: 50%;
+  margin-right: 2.3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.custom-checkbox__outer--disabled:hover {
+  background: var(--checkbox-color);
+  cursor: default;
+}
+.custom-checkbox__inner {
+  --size: 2.3rem;
+
+  display: inline-block;
+  width: var(--size);
+  height: var(--size);
+  flex-shrink: 0;
+  flex-grow: 0;
+  background: var(--todo-item-bg-color);
+  border-radius: 50%;
+}
+.todo-item__checkbox+.todo-item__label:hover > .custom-checkbox__outer,
+.todo-item__checkbox:hover+label > .custom-checkbox__outer,
+.todo-item__checkbox:checked+label > .custom-checkbox__outer {
+  background: linear-gradient(hsl(192, 100%, 67%),hsl(280, 87%, 65%));
+}
+.todo-item__checkbox:checked+label > .custom-checkbox__outer > .custom-checkbox__inner {
+  background: url("../../images/icon-check.svg") no-repeat center center, linear-gradient(hsl(192, 100%, 67%),hsl(280, 87%, 65%));
+}
+.todo-item__checkbox:checked+.todo-item__label {
+  color: var(--checkbox-checked-color);
+  text-decoration: line-through;
+}
+.todo-item__text {
+  width: 100%;
+  font-family: var(--main-font);
+  font-size: 1.8rem;
+  color: var(--text-color);
+  text-align: center;
+}
+.todo-item__label {
+  width: 100%;
+  background: var(--todo-item-bg-color);
+  font-family: var(--main-font);
+  font-size: 1.8rem;
+  color: var(--text-color);
+  border: none;
+  display: inline-flex;
+  flex-shrink: 0;
+  flex-grow: 0;
+  justify-content: flex-start;
+  align-items: center;
+}
+.todo-item__label:hover {
+  color: var(--text-hover-color);
+}
+.todo-item__button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  width: 2.5rem;
+  height: 2.5rem;
+  visibility: hidden;
+  background: url("../../images/icon-cross.svg") no-repeat center center;
+  flex-shrink: 0;
+  flex-grow: 0;
+}
+.todo-item__button:focus {
+  outline: none;
+}
+.todo-item:hover .todo-item__button {
+  visibility: visible;
+}
+
+@media (max-width: 625px) {
+  .todo-item {
+    padding: 1.35rem 2.1rem;
+  }
+  .custom-checkbox__outer {
+    --size: 2rem;
+
+    margin-right: 1.2rem;
+  }
+  .custom-checkbox__inner {
+    --size: 1.8rem;
+  }
+  .todo-item__label {
+    font-size: 1.2rem;
+  }
+  .todo-item__text {
+    font-size: 1.2rem;
+  }
+}

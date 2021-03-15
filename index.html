@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Practice #2 | Todo app</title>
+    <link rel="stylesheet" href="styles/index.css" />
+  </head>
+  <body>
+
+    <div class="container">
+      <div class="wrapper">
+
+        <header class="header">
+          <h1 class="header__title">TODO</h1>
+          <button class="header__button">
+            <img
+              class="header__icon"
+              src="images/icon-sun.svg"
+              alt="toggle theme"
+            />
+          </button>
+        </header>
+
+        <div class="add-todo-item">
+          <span class="custom-checkbox__outer custom-checkbox__outer--disabled">
+            <span class="custom-checkbox__inner"></span>
+          </span>
+          <form class="add-todo-item__form">
+            <input
+              class="add-todo-item__input"
+              type="text"
+              name="add-todo"
+              placeholder="Create a new todo..."
+            />
+            <input class="add-todo-item__submit" type="submit" />
+          </form>
+        </div>
+
+        <div class="shadow-wrapper">
+          <div class="todo-list"></div>
+
+          <footer class="footer">
+            <p class="footer__text"></p>
+            <div class="button-box">
+              <div class="button-box__button button-box__button--active" id="button-all">
+                All
+              </div>
+              <div class="button-box__button" id="button-active">Active</div>
+              <div class="button-box__button" id="button-completed">Completed</div>
+            </div>
+            <div class="footer__button">Clear Completed</div>
+          </footer>
+
+        </div>
+
+      </div>
+    </div>
+    <script type="module" src="scripts/index.js"></script>
+  </body>
+</html>
