@@ -24,8 +24,8 @@ const COMPLETED = "completed";
 
 const TODO_LIST_LOCAL_STORAGE = "todo-list-data";
 const TODO_CATEGORY_LOCAL_STORAGE = "todo-category-data";
-
 const TODO_THEME_LOCAL_STORAGE = "todo-theme-data";
+
 const DARK = "dark";
 const LIGHT = "light";
 
@@ -173,21 +173,17 @@ function clearTodoListElement() {
   }
 }
 
-function getEmptyTodoItemElement() {
-  return `
-          <div class="todo-item">
-            <p class="todo-item__text">There are no items here.</p>
-          </div>  
-  `;
-}
-
 function fillTodoListElementWith(list) {
   if (list.length > 0) {
     list.forEach((todo) => {
       todoListElement.appendChild(todo.element);
     });
   } else {
-    todoListElement.innerHTML = getEmptyTodoItemElement();
+    todoListElement.innerHTML = `
+      <div class="todo-item">
+        <p class="todo-item__text">There are no items here.</p>
+      </div>  
+    `;
   }
 }
 
